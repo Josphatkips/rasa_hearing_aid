@@ -6,41 +6,81 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
+  - 
+  # - intent: mood_great
+  # - action: utter_happy
 
-- story: sad path 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
+# - story: sad path 1
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: mood_unhappy
+#   - action: utter_cheer_up
+#   - action: utter_did_that_help
+#   - intent: affirm
+#   - action: utter_happy
 
-- story: sad path 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
-- story: aid story
-  steps:
-  - intent: aid_project
-  - action: utter_iamabot
-  - action: action_hello_world
+# - story: sad path 2
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: mood_unhappy
+#   - action: utter_cheer_up
+#   - action: utter_did_that_help
+#   - intent: deny
+#   - action: utter_goodbye
+# - story: aid story
+#   steps:
+#   - intent: aid_project
+#   - action: utter_iamabot
+#   - action: action_hello_world
 
   
+
+
+
+
 
 - story: interactive_story_1
   steps:
   - intent: get_started
+  - action: utter_check_faq
   - action: utter_help_buttons
   - intent: hardware_help
-  - action: utter_send_an_image
-  - intent: greet
+  - action: image_url_form
+  - active_loop: image_url_form
+  - slot_was_set:
+    - requested_slot: image_url
+  - slot_was_set:
+    - image_url: gggggg
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
   - action: utter_bring
+  - action: action_upload_image
+
+# - story: interactive_story_1
+#   steps:
+#   - intent: get_started
+#   - action: utter_check_faq
+#   - action: utter_help_buttons
+#   - intent: hardware_help
+#   - action: image_url_form
+#   - active_loop: image_url_form
+#   - slot_was_set:
+#     - requested_slot: image_url
+#   - intent: mood_great
+#   - action: utter_happy
+
+# - story: interactive_story_2
+#   steps:
+#   - intent: get_started
+#   - action: utter_check_faq
+#   - action: utter_help_buttons
+#   - intent: hardware_help
+#   - action: image_url_form
+#   - active_loop: image_url_form
+#   - slot_was_set:
+#     - requested_slot: image_url
+#   - intent: mood_great
+#   - action: action_hello_world

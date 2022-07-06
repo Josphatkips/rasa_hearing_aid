@@ -13,9 +13,34 @@ intents:
 - software_help
 actions:
 - action_hello_world
+- action_upload_image
 - utter_bring
+- utter_check_faq
+- utter_greet
+- utter_happy
 - utter_help_buttons
 - utter_send_an_image
+# - action_upload_image
+# entities:
+# - image_url
+forms:
+  image_url_form:
+    required_slots:
+    - image_url
+
+slots:
+  # image_url:
+  #   type: text
+  #   mappings:
+  #   - type: from_entity
+  #     entity: image_url
+  image_url:
+    type: text
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: image_url_form
+        requested_slot: image_url
 responses:
   utter_greet:
   - text: Hey! How are you?
@@ -32,6 +57,8 @@ responses:
   - text: I am a bot, powered by Rasa.
   utter_send_an_image:
   - text: Kindly send an Image Of the hardware.
+  utter_ask_image_url:
+  - text: 'Kindly upload the image:'
   utter_bring:
   - text: Bring down the hearing aids to the manufacturingc enter if under warranty
   utter_check_faq:

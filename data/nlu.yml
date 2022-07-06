@@ -16,6 +16,9 @@ nlu:
     - goodevening
     - good afternoon
     - h
+    - hh
+    - gggghghg
+    - gfdhhghgfgffghfhghgfgfhfh
 - intent: goodbye
   examples: |
     - cu
@@ -61,6 +64,8 @@ nlu:
     - so so perfect
     - so good
     - so perfect
+    - ffffffffg
+    - myimageform
 - intent: mood_unhappy
   examples: |
     - my day was horrible
