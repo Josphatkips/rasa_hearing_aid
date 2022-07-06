@@ -26,8 +26,7 @@ class ActionHelloWorld(Action):
         print('tracker')
         print(tracker.get_slot('image_url'))
         print(tracker.get_slot('screenshot'))
-        # print(tracker.events)
-        # print(tracker.out_channel)
+        
 
         dispatcher.utter_message(text="Hello World!")
 

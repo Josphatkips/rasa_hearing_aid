@@ -215,15 +215,14 @@ class TelegramInput(InputChannel):
 
         @telegram_webhook.route("/webhook", methods=["GET", "POST"])
         async def message(request: Request) -> Any:
-            print("Hello world")
+           
             
             if request.method == "POST":
 
                 request_dict = request.json
                 
                 update = Update.de_json(request_dict)
-                print('update')
-                print(update)
+                
                 if not out_channel.get_me().username == self.verify:
                     logger.debug("Invalid access token, check it matches Telegram")
                     return response.text("failed")
@@ -234,10 +233,7 @@ class TelegramInput(InputChannel):
                 elif self._is_edited_message(update):
                     msg = update.edited_message
                     text = update.edited_message.text
-                # elif self._is_image(update):
-                #     print("This is image")
-                    # msg = update.edited_message
-                    # text = update.edited_message.text
+                
                 else:
                     msg = update.message
                     if self._is_user_message(msg):
@@ -249,17 +245,14 @@ class TelegramInput(InputChannel):
                         )
                     elif self._is_image(msg):
 
-                        # print(msg)
-                        print("Image")
-                        # print(msg)
+                        
                         print(msg.photo[1].file_id)
                         text = msg.photo[1].file_id
                     else:
                         return response.text("success")
                 sender_id = msg.chat.id
                 metadata = self.get_metadata(request)
-                print(metadata)
-                print(metadata)
+                
                 try:
                     if text == (INTENT_MESSAGE_PREFIX + USER_INTENT_RESTART):
                         await on_new_message(
