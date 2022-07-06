@@ -6,7 +6,9 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
-  - 
+  - action: utter_check_faq
+  - action: utter_help_buttons
+  - checkpoint: buttons
   # - intent: mood_great
   # - action: utter_happy
 
@@ -43,9 +45,10 @@ stories:
 
 - story: interactive_story_1
   steps:
-  - intent: get_started
-  - action: utter_check_faq
-  - action: utter_help_buttons
+  # - intent: get_started
+  # - action: utter_check_faq
+  # - action: utter_help_buttons
+  - checkpoint: buttons
   - intent: hardware_help
   - action: image_url_form
   - active_loop: image_url_form
