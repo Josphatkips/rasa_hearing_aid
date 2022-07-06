@@ -253,7 +253,7 @@ class TelegramInput(InputChannel):
                         print("Image")
                         # print(msg)
                         print(msg.photo[1].file_id)
-                        text = "Test my aid"
+                        text = msg.photo[1].file_id
                     else:
                         return response.text("success")
                 sender_id = msg.chat.id
