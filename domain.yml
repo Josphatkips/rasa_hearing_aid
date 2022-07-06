@@ -27,6 +27,9 @@ forms:
   image_url_form:
     required_slots:
     - image_url
+  error_screenshot_form:
+    required_slots:
+    - screenshot
 
 slots:
   # image_url:
@@ -41,9 +44,16 @@ slots:
       conditions:
       - active_loop: image_url_form
         requested_slot: image_url
+  screenshot:
+    type: text
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: error_screenshot_form
+        requested_slot: screenshot
 responses:
   utter_greet:
-  - text: Hey! How are you?
+  - text: Hey! How are you? What can I help you with today?
   utter_cheer_up:
   - text: 'Here is something to cheer you up:'
     image: https://i.imgur.com/nGF1K8f.jpg
@@ -59,8 +69,12 @@ responses:
   - text: Kindly send an Image Of the hardware.
   utter_ask_image_url:
   - text: 'Kindly upload the image:'
+  utter_ask_screenshot:
+  - text: 'Kindly upload screenshot of the error:'
   utter_bring:
   - text: Bring down the hearing aids to the manufacturingc enter if under warranty
+  utter_recommend_downgrade:
+  - text: if the error persists Kindly downgrade software version to the stable version instead of the latest version.
   utter_check_faq:
   - text: Kindly check FAQ before proceeding
   utter_help_buttons:

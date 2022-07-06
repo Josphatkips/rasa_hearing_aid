@@ -43,11 +43,8 @@ stories:
 
 
 
-- story: interactive_story_1
+- story: Hardware Issue
   steps:
-  # - intent: get_started
-  # - action: utter_check_faq
-  # - action: utter_help_buttons
   - checkpoint: buttons
   - intent: hardware_help
   - action: image_url_form
@@ -59,8 +56,26 @@ stories:
   - slot_was_set:
     - requested_slot: null
   - active_loop: null
-  - action: utter_bring
   - action: action_upload_image
+  - action: utter_bring
+  
+
+- story: Software Issue
+  steps:
+  - checkpoint: buttons
+  - intent: software_help
+  - action: error_screenshot_form
+  - active_loop: error_screenshot_form
+  - slot_was_set:
+    - requested_slot: screenshot
+  - slot_was_set:
+    - screenshot: gggggg
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_upload_image
+  - action: utter_recommend_downgrade
+  
 
 # - story: interactive_story_1
 #   steps:

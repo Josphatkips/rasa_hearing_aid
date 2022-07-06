@@ -15,10 +15,12 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
-    - h
-    - hh
-    - gggghghg
-    - gfdhhghgfgffghfhghgfgfhfh
+    - /start
+    - start
+    - Get started
+    - I have an issue
+    - Hearing aids
+    - I have a proble with hearing aids
 - intent: goodbye
   examples: |
     - cu

@@ -24,6 +24,8 @@ class ActionHelloWorld(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         print('tracker')
+        print(tracker.get_slot('image_url'))
+        print(tracker.get_slot('screenshot'))
         # print(tracker.events)
         # print(tracker.out_channel)
 
