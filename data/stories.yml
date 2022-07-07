@@ -67,3 +67,23 @@ stories:
   - checkpoint: calibration
   - intent: not_fixed
   - action: utter_buy_new_products
+
+- story: software pairing
+  steps:
+  - checkpoint: software
+  - intent: pairing
+  - action: utter_pairing_fix
+  - action: utter_fixed
+  - checkpoint: pairing
+
+- story: Pairing fixed
+  steps:
+  - checkpoint: pairing
+  - intent: fixed
+  - action: utter_thanks
+
+- story: Pairing not fixed
+  steps:
+  - checkpoint: pairing
+  - intent: not_fixed
+  - action: utter_buy_new_products

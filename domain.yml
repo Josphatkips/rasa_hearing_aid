@@ -30,6 +30,7 @@ actions:
 - utter_fixed
 - utter_thanks
 - utter_buy_new_products
+- utter_pairing_fix
 # - action_upload_image
 # entities:
 # - image_url
@@ -83,6 +84,8 @@ responses:
   - text: 'Thanks for using our services'
   utter_ask_screenshot:
   - text: 'What is the software Issue?'
+  utter_pairing_fix:
+  - text: 'If there are issues with pairing, please ensure that the distance between your hearing aids and your phone is close and not far apart.'
   utter_bring:
   - text: Bring down the hearing aids to the manufacturingc enter if under warranty
   utter_calibration_error_fix:
