@@ -11,6 +11,15 @@ stories:
   - checkpoint: buttons
  
 
+- story: Iquiry
+  steps:
+  - checkpoint: buttons
+  - intent: inquire
+  - action: utter_hardware_answer
+  - action: utter_check_warranty
+  - action: utter_service_center_recommendation
+  - action: utter_purchase_new_vibe_product
+
 
 
 

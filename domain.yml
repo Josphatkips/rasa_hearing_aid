@@ -32,6 +32,10 @@ actions:
 - utter_buy_new_products
 - utter_pairing_fix
 - utter_vibe_app_fix
+- utter_hardware_answer
+- utter_check_warranty
+- utter_service_center_recommendation
+- utter_purchase_new_vibe_product
 # - action_upload_image
 # entities:
 # - image_url
@@ -89,6 +93,14 @@ responses:
   - text: 'If there are issues with pairing, please ensure that the distance between your hearing aids and your phone is close and not far apart.'
   utter_bring:
   - text: Bring down the hearing aids to the manufacturingc enter if under warranty
+  utter_purchase_new_vibe_product:
+  - text: Bring down the hearing aids to the manufacturingc enter if under warranty
+  utter_service_center_recommendation:
+  - text: "If you are heading to the service center, we recommend that you come in the these timeslots where the service centre is less busy : 8 AM to 10 AM  and 2 PM to 4 PM"
+  utter_check_warranty:
+  - text: Before heading down to the service centre, we advise our customers to check on the status of the warranty for their purchased hearing aids. If the hearing aids are still under warranty, there will be minimal or no cost incurred for the complete service of your hearing aids. However, if the warranty has expired, we would like to inform or customers that they will have to bear the full servicing costs for their faulty hearing aids.
+  utter_hardware_answer:
+  - text: Unfortunately, for cases of hardware we require you to bring down your faulty hearing aids to our service centre for our repair team to diagnose the problem.
   utter_calibration_error_fix:
   - text: If there are issues with calibration, please try to reset your hearing aids by following the user manual then follow the steps to recalibrate the hearing aids through the application
   utter_recommend_downgrade:
