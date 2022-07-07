@@ -11,6 +11,12 @@ intents:
 - mood_great
 - mood_unhappy
 - software_help
+- inquire
+- vibe_app
+- pairing
+- calibration
+- fixed
+- not_fixed
 actions:
 - action_hello_world
 - action_upload_image
@@ -20,6 +26,10 @@ actions:
 - utter_happy
 - utter_help_buttons
 - utter_send_an_image
+- utter_calibration_error_fix
+- utter_fixed
+- utter_thanks
+- utter_buy_new_products
 # - action_upload_image
 # entities:
 # - image_url
@@ -69,14 +79,20 @@ responses:
   - text: Kindly send an Image Of the hardware.
   utter_ask_image_url:
   - text: 'Kindly upload the image:'
+  utter_thanks:
+  - text: 'Thanks for using our services'
   utter_ask_screenshot:
-  - text: 'Kindly upload screenshot of the error:'
+  - text: 'What is the software Issue?'
   utter_bring:
   - text: Bring down the hearing aids to the manufacturingc enter if under warranty
+  utter_calibration_error_fix:
+  - text: If there are issues with calibration, please try to reset your hearing aids by following the user manual then follow the steps to recalibrate the hearing aids through the application
   utter_recommend_downgrade:
   - text: if the error persists Kindly downgrade software version to the stable version instead of the latest version.
   utter_check_faq:
   - text: Kindly check FAQ before proceeding
+  utter_buy_new_products:
+  - text: "If you are looking for new products of our vibe brand, you may visit our webpage at this link:https://sg.vibe-hearing.com/"
   utter_help_buttons:
   - text: What Can I help you with ?
     buttons:
@@ -84,6 +100,25 @@ responses:
       payload: /hardware_help
     - title: Software
       payload: /software_help
+    - title: Iquire on Products
+      payload: /inquire
+  utter_software_buttons:
+  - text: Choose one
+    buttons:
+    - title: Vipe App
+      payload: /vibe_app
+    - title: Pairing
+      payload: /pairing
+    - title: Calibration
+      payload: /calibration
+  utter_fixed:
+  - text: Was the issie fixed?
+    buttons:
+    - title: "Yes"
+      payload: /fixed
+    - title: "No"
+      payload: /not_fixed
+    
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

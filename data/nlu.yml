@@ -110,3 +110,21 @@ nlu:
     - I need software Help
     - I am encoutering Software Issue
     - Software issue
+- intent: inquire
+  examples: |
+    - Make iquiries
+    - Can I iquire
+    - I wanna make iquiries
+- intent: vibe_app
+  examples: |
+    - Vibe app
+    - Vibe
+- intent: pairing
+  examples: |
+    - Pairing App
+    - pairing
+- intent: calibration
+  examples: |
+    - calibration issue
+    - Calibration
+    

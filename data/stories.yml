@@ -45,5 +45,25 @@ stories:
   - slot_was_set:
     - requested_slot: null
   - active_loop: null
-  - action: action_upload_image
-  - action: utter_recommend_downgrade
+  - action: utter_software_buttons
+  - checkpoint: software
+
+- story: software calibration
+  steps:
+  - checkpoint: software
+  - intent: calibration
+  - action: utter_calibration_error_fix
+  - action: utter_fixed
+  - checkpoint: calibration
+
+
+- story: calibration fixed
+  steps:
+  - checkpoint: calibration
+  - intent: fixed
+  - action: utter_thanks
+- story: calibration not fixed
+  steps:
+  - checkpoint: calibration
+  - intent: not_fixed
+  - action: utter_buy_new_products
