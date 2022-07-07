@@ -31,6 +31,7 @@ actions:
 - utter_thanks
 - utter_buy_new_products
 - utter_pairing_fix
+- utter_vibe_app_fix
 # - action_upload_image
 # entities:
 # - image_url
@@ -93,11 +94,13 @@ responses:
   utter_recommend_downgrade:
   - text: if the error persists Kindly downgrade software version to the stable version instead of the latest version.
   utter_check_faq:
-  - text: Kindly check FAQ before proceeding
+  - text: "Before we begin, kindly check out the FAQ and download the user manual before proceeding at this link: https://sg.vibe-hearing.com/support"
+  utter_vibe_app_fix:
+  - text: If there are issues with the vibe app, do consider uninstalling and re-installing the application, if the issue persists, please contact our application support team via the app store.
   utter_buy_new_products:
   - text: "If you are looking for new products of our vibe brand, you may visit our webpage at this link:https://sg.vibe-hearing.com/"
   utter_help_buttons:
-  - text: What Can I help you with ?
+  - text: If you are unable to find your answer, please proceed and select the type of issue you are facing
     buttons:
     - title: Hardware
       payload: /hardware_help

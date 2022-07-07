@@ -87,3 +87,23 @@ stories:
   - checkpoint: pairing
   - intent: not_fixed
   - action: utter_buy_new_products
+
+- story: software Vibe App
+  steps:
+  - checkpoint: software
+  - intent: vibe_app
+  - action: utter_vibe_app_fix
+  - action: utter_fixed
+  - checkpoint: vibe
+
+- story: Vibe fixed
+  steps:
+  - checkpoint: vibe
+  - intent: fixed
+  - action: utter_thanks
+
+- story: Vibe not fixed
+  steps:
+  - checkpoint: vibe
+  - intent: not_fixed
+  - action: utter_buy_new_products
